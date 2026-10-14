@@ -1,3 +1,4 @@
 #lang racket
 
-(display "hello world")
+(displayln "hello world")
+(display 15)
