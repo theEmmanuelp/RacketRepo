@@ -2,7 +2,11 @@
 
 (define word "Sample")
 
-(string->list word)
 
+(
+    define (TheWord x)
+        (string->list x)
+        (list->string x)
+)
 
-
+(TheWord word)
