@@ -4,9 +4,15 @@
 
 
 (
-    define (TheWord x)
+    define (theword x)
         (string->list x)
-        (list->string x)
+        
 )
 
-(TheWord word)
+(theword word)
+
+
+(define sentence "This is a test")
+(define word-list (string-split sentence))
+
+word-list
