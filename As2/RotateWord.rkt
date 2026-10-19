@@ -4,12 +4,14 @@
 
 (
     define (theword x)
-        (string->list x)
         (
-            if (empty? x)
-            `()
-            (append (rest x) (list (first x)))
-        )        
+            let([char-list (string->list x)])
+            (
+                if (empty? char-list)
+                `()
+                (list->string(append (rest char-list) (list (first char-list))))
+            )
+        )
 )
 (theword word)
 
