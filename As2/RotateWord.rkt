@@ -1,9 +1,15 @@
 #lang racket
 
 (define word "Sample")
+
 (
     define (theword x)
-        (string->list x)        
+        (string->list x)
+        (
+            if (empty? x)
+            `()
+            (append (rest x) (list (first x)))
+        )        
 )
 (theword word)
 
