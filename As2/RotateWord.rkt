@@ -16,7 +16,13 @@
 (theword word)
 
 
-(define sentence "This is a test")
-(define word-list (string-split sentence))
-word-list
-(map string-length word-list)
+(
+    define (rotate sen)
+    (
+        let ([word-list (string-split sen)])
+            (map string-length word-list)
+    )
+)
+
+(rotate "hello")
+(rotate "The quick brown fox")
