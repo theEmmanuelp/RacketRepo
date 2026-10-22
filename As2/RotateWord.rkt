@@ -50,3 +50,6 @@
 
 (rotate "hello")
 (rotate "The quick brown fox")
+(rotate "University of Lethbridge") ;;returns "Niversityu of thbridgele"
+(rotate "I am a cat") ;;returns "I ma a atc"
+(rotate "Racket is fun") ;;returns "Acketr is nfu"
