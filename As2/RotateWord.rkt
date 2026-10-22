@@ -5,12 +5,16 @@
 (
     define (theword x k)
         (
+            ;; turn a word into a list of letters
             let([char-list (string->list x)])
             (
+                ;;empty return nothing
                 if (empty? char-list)
                 ""
                 (
+                    ;;using modulo help k stay in range
                     let ([rot (modulo k (length char-list))])
+                    ;;drop: remove the first letter. take: put letter at the back 
                     (list->string (append (drop char-list rot) (take char-list rot)))
                 )
             )
