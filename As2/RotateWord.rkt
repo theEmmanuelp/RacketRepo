@@ -3,18 +3,22 @@
 (define word "Sample")
 
 (
-    define (theword x)
+    define (theword x k)
         (
             let([char-list (string->list x)])
             (
                 if (empty? char-list)
-                `()
-                (list->string(append (rest char-list) (list (first char-list))))
+                ""
+                (
+                    let ([rot (modulo k (length char-list))])
+                    (list->string (append (drop char-list rot) (take char-list rot)))
+                )
             )
         )
 )
-(theword word)
-
+(theword word 2)
+(theword word 3)
+(theword word 1)
 
 (
     define (rotate sen)
