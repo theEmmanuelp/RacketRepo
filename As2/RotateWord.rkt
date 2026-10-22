@@ -38,9 +38,11 @@
                 (;;first find the length of each word 'x'
                     let* ([word-lengths (map string-length word-list)]
                     ;;find the 'k' value by shifting to the left of the list 
-                            [k (cons 1 (take word-lengths(sub1 len)))])
+                            [k (cons 1 (take word-lengths(sub1 len)))]
                     ;;using map use the following values of 'k' 'x' for k % x         
-                    (map (lambda (k x) (modulo k x)) k word-lengths)
+                    [shift (map (lambda (k x) (modulo k x)) k word-lengths)])
+
+                    (string-join (map theword word-list shift))
                 )
             )
     )
