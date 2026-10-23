@@ -38,4 +38,33 @@
 )
 
 
+;; Decode a single word (tokens separated by spaces)
+(
+    define (decode-word word-str)
+    (
+        let ([tokens (string-split word-str)])
+        (
+            ;; Join the decoded letters together with no spaces between them
+            string-join (map decode-token tokens) ""
+        )
+    )
+)
 
+;; Main decode function (words separated by "/")
+(
+    define (decode s)
+    (
+        ;; Split by "/" (with optional spaces around it) using a regular expression
+        let ([words (string-split s #rx"\\s*/\\s*")])
+        (
+            ;; Decode each word, then join them back together with a space between words
+            string-join (map decode-word words) " "
+        )
+    )
+)
+
+(decode "... --- ...") ;;returns "SOS"
+(decode "- .... . / -... .-. --- .-- -. / ..-. --- -..-") ;;returns "THE BROWN FOX"
+(decode "-.*2 --- / .--*3") ;;returns "NNO WWW"
+(decode ".-.. ---*2 -.- / .-.-.- .- --*2") ;;returns "LOOK ?AMM"
+(decode "..---*3 / ......") ;;returns "222 ?"
