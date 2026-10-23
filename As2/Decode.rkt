@@ -74,3 +74,4 @@
 (decode "-.*2 --- / .--*3") ;;returns "NNO WWW"
 (decode ".-.. ---*2 -.- / .-.-.- .- --*2") ;;returns "LOOK ?AMM"
 (decode "..---*3 / ......") ;;returns "222 ?"
+(decode "...-- .....*4 --... -....") ;; 3576
