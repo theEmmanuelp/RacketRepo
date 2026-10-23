@@ -7,7 +7,9 @@
  "-. --- .--. --.- .-. ... - ..- ...- .-- -..- -.-- --.. "
  "----- .---- ..--- ...-- ....- ..... -.... --... ---.. ----."))
 
- (
+;; Build the lookup hash table dynamically using map and lambda.
+;; This zips the split codes list with the split characters list in parallel.
+(
     define morse-hash
     (
         make-immutable-hash
@@ -17,7 +19,7 @@
                 (map string (string->list symbols))
         )
     )
- )
+)
 
 ;; Decode a single token (handles optional *n multipliers and unknown codes)
 (
