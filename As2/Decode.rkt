@@ -56,7 +56,11 @@
 (
     define (decode s)
     (
-        ;; Split by "/" (with optional spaces around it) using a regular expression
+        ;; Split the sentence into words using a regular expression (#rx):
+        ;; - \\s* matches zero or more whitespace characters (spaces, tabs)
+        ;; - / matches the literal slash character used as the word separator
+        ;; - \\s* matches any trailing whitespace after the slash
+        ;; This ensures clean splitting regardless of uneven spacing around the slashes.
         let ([words (string-split s #rx"\\s*/\\s*")])
         (
             ;; Decode each word, then join them back together with a space between words
