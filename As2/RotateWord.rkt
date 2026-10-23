@@ -20,9 +20,7 @@
             )
         )
 )
-(theword word 2)
-(theword word 3)
-(theword word 1)
+
 
 (
     define (rotate sen)
